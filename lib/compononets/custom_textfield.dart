@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/utils/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -11,19 +12,19 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).accentColor,
+      color: grayLight,
       padding: const EdgeInsets.all(5),
      child:  TextField(
-     style: TextStyle(
-       color: Theme.of(context).dividerColor
+     style: const TextStyle(
+       color: kwhite
        ,fontSize: 14
      ),
      decoration: InputDecoration(
        labelText: lable,
        labelStyle: const TextStyle(
-      color: Color(0xFF9B9B9B),
+      color: gray,
        fontSize: 15),
-       fillColor: Theme.of(context).accentColor,
+       fillColor: grayLight,
        filled: true,
        border: InputBorder.none,
        

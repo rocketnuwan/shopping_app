@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/compononets/custom_textfield.dart';
 import 'package:shopping_app/compononets/page_end_line.dart';
 import 'package:shopping_app/compononets/social_buttons.dart';
-import 'package:shopping_app/utils/app_theme.dart';
+import 'package:shopping_app/utils/app_colors.dart';
+
 
 
 class RegistrationPage extends StatefulWidget {
@@ -13,24 +14,20 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
-  bool _switch =false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: grayBackground,
       appBar: AppBar(
+      backgroundColor: grayBackground,
       elevation: 0,
-      actions: [Switch(value: _switch, onChanged: (value){
-        setState(() {
-          _switch=!_switch;
-          currentTheme.toggleTheme();
-        });
-      },activeColor: Colors.pink,)
-      ],
       leading: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          IconButton(onPressed: (){}, icon: const Icon(Icons.chevron_left_outlined),),
+          IconButton(onPressed: (){
+
+          }, icon: const Icon(Icons.chevron_left_outlined,color: kwhite,),),
         ],
       ),
       ),
@@ -43,7 +40,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
             children: [
               const Text("Sing up",style: TextStyle(
                 fontSize: 34,
-                fontWeight: FontWeight.bold,),),
+                fontWeight: FontWeight.bold,
+                color: kwhite
+                ),),
               const SizedBox(height: 73,),
               const CustomTextField(lable: "name",),
               const SizedBox(
@@ -128,10 +127,3 @@ class _RegistrationPageState extends State<RegistrationPage> {
     );
   }
 }
-
-// Switch(value: _switch, onChanged: (value){
-//               setState(() {
-//                 _switch = !_switch;
-//                 currentTheme.toggleTheme();
-//               });
-//             },activeColor:const Color(0xFFEF3651),)
