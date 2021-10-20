@@ -4,10 +4,14 @@ import 'package:shopping_app/utils/app_colors.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     Key? key,
-    required this.lable
+    required this.lable,
+    this.ispassword=false,
+    required this.controller
   }) : super(key: key);
 
-  final lable;
+  final String lable;
+  final bool ispassword;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -15,19 +19,20 @@ class CustomTextField extends StatelessWidget {
       color: grayLight,
       padding: const EdgeInsets.all(5),
      child:  TextField(
+       obscureText: ispassword,
+       controller: controller,
      style: const TextStyle(
-       color: kwhite
+       color: kwhiteDark
        ,fontSize: 14
      ),
      decoration: InputDecoration(
-       labelText: lable,
-       labelStyle: const TextStyle(
+      labelText: lable,
+      labelStyle: const TextStyle(
       color: gray,
-       fontSize: 15),
-       fillColor: grayLight,
-       filled: true,
-       border: InputBorder.none,
-       
+      fontSize: 14),
+      fillColor: grayLight,
+      filled: true,
+      border: InputBorder.none, 
      ),
    ),
    );
