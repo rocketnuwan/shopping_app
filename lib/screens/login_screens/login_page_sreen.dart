@@ -4,25 +4,20 @@ import 'package:shopping_app/compononets/custom_main_button.dart';
 import 'package:shopping_app/compononets/custom_textfield.dart';
 import 'package:shopping_app/compononets/page_end_line.dart';
 import 'package:shopping_app/compononets/social_buttons.dart';
-import 'package:shopping_app/screens/login_screens/login_page_sreen.dart';
+import 'package:shopping_app/screens/login_screens/forgot_password_screen.dart';
 import 'package:shopping_app/utils/app_colors.dart';
 import 'package:shopping_app/utils/util_functions.dart';
 
-class RegistrationPage extends StatefulWidget {
-  const RegistrationPage({
-    Key? key,
-  }) : super(key: key);
+class LoginPageScreen extends StatefulWidget {
+  const LoginPageScreen({ Key? key }) : super(key: key);
 
   @override
-  _RegistrationPageState createState() => _RegistrationPageState();
+  State<LoginPageScreen> createState() => _LoginPageScreenState();
 }
 
-class _RegistrationPageState extends State<RegistrationPage> {
-
-  final _email = TextEditingController();
-  final _password = TextEditingController();
-  final _name = TextEditingController();
-
+class _LoginPageScreenState extends State<LoginPageScreen> {
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +29,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                UtilFunctions.navigatorBback(context);
+              },
               icon:const Icon(
                 Icons.chevron_left_outlined,
                 color: kwhiteDark,
@@ -51,16 +48,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const CustomTopic(topic: "Sing up",),
+              const CustomTopic(topic: "Login",),
               const SizedBox(
                 height: 73,
-              ),
-              CustomTextField(
-                lable: "Name",
-                controller: _name,
-              ),
-              const SizedBox(
-                height: 8,
               ),
               CustomTextField(
                 lable: "Email",
@@ -84,13 +74,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   width: 200,
                   child: InkWell(
                     onTap: () {
-                      UtilFunctions.navigator(context, const LoginPageScreen());
+                      UtilFunctions.navigator(context,const ForgotPasswordPage());
                     },
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: (const [
                           Text(
-                            "Already have an account? ",
+                            "Forgot your password? ",
                             style: TextStyle(fontSize: 15,color: kwhiteDark),
                           ),
                           Icon(
@@ -107,10 +97,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
               const SizedBox(
                 width: double.infinity,
                 height: 60,
-                child: CustomMainButton(text: "SING UP",),
+                child: CustomMainButton(text: "LOGIN",),
               ),
               const SizedBox(
-                height: 50,
+                height: 120,
               ),
               const Align(
                   alignment: Alignment.center,
@@ -149,6 +139,3 @@ class _RegistrationPageState extends State<RegistrationPage> {
     );
   }
 }
-
-
-
