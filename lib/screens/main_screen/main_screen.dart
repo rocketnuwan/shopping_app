@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: grayBackground,
       body: _screens.elementAt(_currentIndex),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -114,7 +114,7 @@ class BottomNavTile extends StatelessWidget {
         child: Container(
           width: 24,
           height: 24,
-          child: CustomSvg(svgName: icon, color: isSelected ? navpink : kwhite),
+          child: CustomSvg(svgName: icon, color: isSelected ? pink : kwhite),
         ));
   }
 }

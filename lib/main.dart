@@ -1,10 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/screens/main_screen/main_screen.dart';
 import 'package:shopping_app/screens/login_screens/login_page_sreen.dart';
 import 'package:shopping_app/screens/login_screens/register_page.dart';
 
-
-void main(List<String> args) {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -16,8 +18,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home: MainScreen(),
-      //home: RegistrationPage(),
+      //home: MainScreen(),  
+      home: RegistrationPage(),
       //home: LoginPageScreen(),
     );
   }

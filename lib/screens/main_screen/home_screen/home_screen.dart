@@ -18,7 +18,7 @@ class _CartScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: grayBackground,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
