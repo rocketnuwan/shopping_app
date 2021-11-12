@@ -90,7 +90,7 @@ class ProductTile extends StatelessWidget {
           ],
         ),
         CustomText(
-          text: 'Dorothy Perkins',
+          text: 'Dorothy Perkin',
           fontSize: 11,
           color: gray,
         ),
