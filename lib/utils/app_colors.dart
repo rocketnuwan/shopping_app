@@ -12,4 +12,4 @@ const Color orange = Color(0xffFF3E3E);
 const Color yellow = Color(0xffFFBA49);
 const Color red = Color(0xffFF3E3E);
 const Color pink = Color(0xffEF3651);
-
+const Color hgray = Color(0xffDADADA);
