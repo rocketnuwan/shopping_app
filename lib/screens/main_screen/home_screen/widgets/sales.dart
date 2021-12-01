@@ -43,12 +43,16 @@ class ProductTile extends StatelessWidget {
           height: 252,
           margin: EdgeInsets.only(right: 21),
           child: Stack(children: [
-            ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: CustomNetworkImage(
-                  url:
-                      'https://www.weftkart.in/wp-content/uploads/2021/02/Black-02-1.jpg',
-                )),
+            Container(
+              width: 170,
+              height: 240,
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: CustomNetworkImage(
+                    url:
+                        'https://www.weftkart.in/wp-content/uploads/2021/02/Black-02-1.jpg',
+                  )),
+            ),
             OfferTag(),
             FavouriteTag()
           ]),
@@ -125,8 +129,9 @@ class FavouriteTag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.bottomRight,
+    return Positioned(
+      bottom: 0,
+      right: 2,
       child: Container(
         width: 36,
         height: 36,
