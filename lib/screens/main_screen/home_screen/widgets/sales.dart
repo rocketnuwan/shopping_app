@@ -41,7 +41,7 @@ class ProductTile extends StatelessWidget {
         Container(
           width: 170,
           height: 252,
-          margin: EdgeInsets.only(right: 11),
+          margin: EdgeInsets.only(right: 21),
           child: Stack(children: [
             ClipRRect(
                 borderRadius: BorderRadius.circular(15),
@@ -49,7 +49,8 @@ class ProductTile extends StatelessWidget {
                   url:
                       'https://www.weftkart.in/wp-content/uploads/2021/02/Black-02-1.jpg',
                 )),
-            OfferTag()
+            OfferTag(),
+            FavouriteTag()
           ]),
         ),
         SizedBox(
@@ -89,7 +90,7 @@ class ProductTile extends StatelessWidget {
           ],
         ),
         CustomText(
-          text: 'Dorothy Perkins',
+          text: 'Dorothy Perkin',
           fontSize: 11,
           color: gray,
         ),
@@ -117,6 +118,32 @@ class ProductTile extends StatelessWidget {
   }
 }
 
+class FavouriteTag extends StatelessWidget {
+  const FavouriteTag({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.bottomRight,
+      child: Container(
+        width: 36,
+        height: 36,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          color: grayLight,
+        ),
+        child: Icon(
+          Icons.favorite_border_outlined,
+          color: hgray,
+          size: 15,
+        ),
+      ),
+    );
+  }
+}
+
 class OfferTag extends StatelessWidget {
   const OfferTag({
     Key? key,
@@ -136,6 +163,7 @@ class OfferTag extends StatelessWidget {
           child: CustomText(
             text: '-20%',
             fontSize: 11,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
